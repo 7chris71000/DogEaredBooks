@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Checkout</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="images/Dog.ico">
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-4.1.1/bootstrap-4.1.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="fontawesome-free-5.1.0-web/css/all.css">
+    <!-- JS Files -->
+    <script src="JS/jquery.min.js"></script>
+    <!-- FancyBox -->
+</head>
+<body>
+<div class="header">
+    <!-- Logo/Title -->
+    <div class="site_title">
+        <a href="index.html" title="Home"><i class="fas fa-home logo-icons"></i></a>
+        <a href="category.html" title="Categories"><i class="fas fa-sitemap logo-icons"></i></a>
+        <a href="index.html" class="logo-center">
+            Dog Eared Books
+        </a>
+
+        <a href="search.html" title="Search"><i class="fas fa-search logo-icons"></i></a>
+        <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart logo-icons"></i></a>
+    </div>
+</div>
+<!-- END header -->
+
+<div id="container">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content-custom">
+            <h2 class="site_title">Order Successful</h2>
+            <p>Thank you for your order.<br>Happy Reading!</p>
+            <button class="btn btn-dark">
+                <a href="index.html" class="white">OK</a>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="one-half">
+        <div class="heading_bg">
+            <h2>Order</h2>
+        </div>
+
+        <div class="rowCartCheckout border-bottom-cart">
+            <div class="col">
+                <b class="img-size-checkout">Image</b>
+            </div>
+            <div class="col border-left-cart">
+                <b>Title</b>
+            </div>
+            <div class="col border-left-cart">
+                <b>Price</b>
+            </div>
+            <div class="col border-left-cart">
+                <b>Quantity</b>
+            </div>
+            <div class="col border-left-cart">
+                <b >Subtotal</b>
+            </div>
+        </div>
+        <div class="rowCartCheckout">
+            <div class="col line-height">
+                <a href="product.html">
+                    <img id="bookCover" src="images/sapiensResized.jpg">
+                </a>
+            </div>
+            <div class="col data-title">
+                <p id="bookTitle"><a href="product.html">Sapiens</a></p>
+            </div>
+            <div class="col data">
+                <p id="bookPrice">$19.99</p>
+            </div>
+            <div class="col data">
+                <span id="quantityNum" class="margin-ten-ends">1</span>
+            </div>
+            <div class="col data">
+                <p id="subtotalPrice">$19.99</p>
+            </div>
+        </div>
+        <div class="rowCartTotal" id="subtotalRow">
+            <div class="col">
+                <p class="subtotal-title">Subtotal:&nbsp</p>
+            </div>
+            <div class="col text-right tot-money">
+                <p>$19.99</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="rowCartTotal tax-row">
+            <div class="col line-height-40">
+                <p class="rowCartTitle subtotal-title">Tax:&nbsp</p>
+            </div>
+            <div class="col text-right">
+                <p id="tax" class="checkout-tax-num">$2.60</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="rowCartTotal ship-tot-checkout" id="shippingRow">
+            <div class="col">
+                <p class="subtotal-title">Shipping:&nbsp</p>
+            </div>
+            <div class="col text-right">
+                <p id="shipping" class="subtotal-title">N/A</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="rowCartTotal ship-tot-checkout" id="totalRow">
+            <div class="col">
+                <p class="subtotal-title">Total:&nbsp</p>
+            </div>
+            <div class="col text-right">
+                <p id="total" class="subtotal-title">$22.59</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="one-fourth last">
+        <h2>General</h2>
+        <label>Given Name <span class="required">*</span>
+            <span id="firstReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="name" id="first">
+
+        <label>Family Name <span class="required">*</span>
+            <span id="lastReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="name" id="last">
+
+        <label>Telephone<span class="required">*</span>
+            <span id="telephoneReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="telephone" id="telephone">
+
+        <label>E-Mail<span class="required">*</span>
+            <span id="emailReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="email" id="email">
+
+
+        <h2>Billing</h2>
+        <label>Name on Card<span class="required">*</span>
+            <span id="cardNameReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="name" id="cardName">
+
+        <label>Card Number <span class="required">*</span>
+            <span id="cardNumReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="name" id="cardNum" value="">
+
+        <label title="Card Security Code. 3 digits on back of card.">CSC <span class="required">*</span>
+            <span id="cscReq" class="checkout-req"> Error in field.</span>
+        </label>
+        <input type="text" name="number" id="cscNum">
+
+
+        <!--END form ID contact_form -->
+    </div>
+    <div class="one-fourth last">
+        <h2>Shipping</h2>
+
+        <label>Address <span class="required">*</span><span id="addressReq" class="checkout-req"> Error in field.</span></label>
+        <input type="text" name="address" id="address">
+
+        <label>City <span class="required">*</span><span id="cityReq" class="checkout-req"> Error in field.</span></label>
+        <input type="text" name="city" id="city">
+
+        <label>Province <span class="required">*</span><span id="provinceReq"
+                                                             class="checkout-req"> Error in field.</span></label>
+        <input type="text" name="province" id="province">
+
+        <label>Postal Code<span class="required">*</span><span id="postalReq"
+                                                               class="checkout-req"> Error in field.</span></label>
+        <input type="text" name="postal" id="postal">
+
+        <br>
+        <label>Shipping Options<span class="required">*</span>
+            <span id="shippingSelected" class="checkout-req">
+                Select an Option.
+            </span>
+        </label>
+    </div>
+    <button class="btn-ship btn-dark-ship" id="standard">$9.99</button>
+    <span>&nbsp Standard (3-5 Days)</span>
+    <br>
+    <button class="btn-ship btn-dark-ship" id="priority">$19.99</button>
+    <span>&nbsp Priority (1-2 Days)</span>
+    <br>
+    <button class="btn-ship btn-dark-ship" id="free">Free</button>
+    <span>&nbsp Free (7-14 Days)</span>
+    <br>
+
+    <button id="submitForm" class="btn btn-dark checkout-submit">Submit</button>
+
+    <!--END form ID contact_form -->
+</div>
+<br clear="both">
+<br clear="both">
+</div>
+<!-- close container -->
+<div class="footer">
+    <!-- First Column -->
+    <div class="one-fourth center">
+        <h3>Site Map</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+    <!-- Second Column -->
+    <div class="one-half center">
+        <h3>Information</h3>
+        <p>Dog Eared Books is a small company located in the heart of Ottawa, Ontario. We believe
+            anyone who doesnt like reading just hasn't found the right book. Please contact us at (613) 555-5555
+            for any questions or concerns.</p>
+        <p>Happy Reading!</p>
+
+    </div>
+    <!-- Third Column -->
+    <div class="one-fourth last center">
+        <h3>Social Media</h3>
+        <a href="#"><img src="images/icon_fb.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_twitter.png" alt=""></a>
+        <a href="#"><img src="images/icon_in.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_ig.png" alt=""></a>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- END footer -->
+<script>
+    var shippingDone = false;
+    $("#submitForm").click(function () {
+        var regex = new RegExp("^[a-zA-Z ]+$");
+//       $(this).trigger("dblclick");
+        var inputArray = ["#first", "#last", "#address", "#city", "#province", "#postal", "#telephone", "#email", "#cardName", "#cardNum", "#cscNum"];
+        var reqArray = ["#firstReq", "#lastReq", "#addressReq", "#cityReq", "#provinceReq", "#postalReq", "#telephoneReq", "#emailReq", "#cardNameReq", "#cardNumReq", "#cscReq"];
+
+        for (var i = 0; i < inputArray.length; i++) {
+            var valueEntered1 = $(inputArray[i]).val();
+            $(reqArray[i]).css('visibility', "hidden");
+        }
+        var complete = true;
+        for (var i = 0; i < inputArray.length; i++) {
+            var valueEntered = $(inputArray[i]).val();
+            var newValue = valueEntered.split(' ').join('');
+            if (newValue.localeCompare("") == 0) {
+                $(reqArray[i]).css('visibility', "visible");
+                complete = false;
+            }
+        }
+
+        if (!regex.test($("#first").val())) {
+            $("#firstReq").css('visibility', "visible");
+            complete = false;
+        }
+        if (!regex.test($("#last").val())) {
+            $("#lastReq").css('visibility', "visible");
+            complete = false;
+        }
+        if (!regex.test($("#city").val())) {
+            $("#cityReq").css('visibility', "visible");
+            complete = false;
+        }
+        if (!regex.test($("#province").val())) {
+            $("#provinceReq").css('visibility', "visible");
+            complete = false;
+        }
+        if (!regex.test($("#cardName").val())) {
+            $("#cardNameReq").css('visibility', "visible");
+            complete = false;
+        }
+
+        if (isNaN($("#cardNum").val()) || ($("#cardNum").val().length != 16)) {
+            $("#cardNumReq").css('visibility', "visible");
+            complete = false;
+        }
+        if (isNaN($("#cscNum").val()) || ($("#cscNum").val().length != 3)) {
+            $("#cscReq").css('visibility', "visible");
+            complete = false;
+        }
+
+
+        if ($("#telephone").val().length != 10 || isNaN($("#telephone").val())) {
+            if (!(($("#telephone").val().charAt(0).localeCompare("1") == 0) && $("#telephone").val().length == 11)) {
+                $("#telephoneReq").css('visibility', "visible");
+                complete = false;
+            }
+        }
+
+        if ($("#email").val().indexOf("@") == -1) {
+            $("#emailReq").css('visibility', "visible");
+            complete = false;
+        }
+
+        $("#shippingSelected").css('visibility', "hidden");
+
+        if(!shippingDone){
+            $("#shippingSelected").css('visibility', "visible");
+        }
+
+        if (complete && shippingDone) {
+            $("#myModal").css("display", "block");
+        }
+    });
+
+    $("#standard").click(function () {
+        shippingDone = true;
+
+        var newShipping = 9.99;
+        $("#shipping").text("$" + newShipping);
+        var totWshipping = newShipping + 22.59;
+        $("#total").text("$" + totWshipping.toFixed(2));
+
+
+    });
+    $("#priority").click(function () {
+        shippingDone = true;
+
+        var newShipping = 19.99;
+        $("#shipping").text("$" + newShipping);
+        var totWshipping = newShipping + 22.59;
+        $("#total").text("$" + totWshipping.toFixed(2));
+    });
+    $("#free").click(function () {
+        shippingDone = true;
+
+        var newShipping = 0.00;
+        $("#shipping").text("Free");
+        var totWshipping = newShipping + 22.59;
+        $("#total").text("$" + totWshipping.toFixed(2));
+    });
+</script>
+</body>
+</html>

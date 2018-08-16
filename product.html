@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Sapiens</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="images/Dog.ico">
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-4.1.1/bootstrap-4.1.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="fontawesome-free-5.1.0-web/css/all.css">
+
+    <!--JS FILES -->
+    <script src="bootstrap-4.1.1/bootstrap-4.1.1/js/jquery.tools.min.js"></script>
+    <script>
+        $(function () {
+            $("#prod_nav ul").tabs("#panes > div", {
+                effect: 'fade',
+                fadeOutSpeed: 400
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".pane-list li").click(function () {
+                window.location = $(this).find("a").attr("href");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    <!-- Logo/Title -->
+    <div class="site_title">
+        <a href="index.html" title="Home"><i class="fas fa-home logo-icons"></i></a>
+        <a href="category.html" title="Categories"><i class="fas fa-sitemap logo-icons"></i></a>
+        <a href="index.html" class="logo-center">
+            Dog Eared Books
+        </a>
+
+        <a href="search.html" title="Search"><i class="fas fa-search logo-icons"></i></a>
+        <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart logo-icons"></i></a>
+    </div>
+</div>
+<!-- END header -->
+<div id="container">
+    <!-- tab panes -->
+    <!--<div id="prod_wrapper">-->
+        <div id="panes">
+            <div><img src="images/sapiens.jpg" alt="">
+                <h2>Sapiens</h2>
+                <h5>Author: Yuval Noah Harari</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/theSixthExtinction.jpg" alt="">
+                <h2>The Sixth Extinction</h2>
+                <h5>Author: Elizabeth Kolbert</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/theVitalQuestion.jpg" alt="">
+                <h2>The Vital Question</h2>
+                <h5>Author: Nick Lane</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/astrophysics.jpg" alt="">
+                <h2>Astrophysics for People in a Hurry</h2>
+                <h5>Author: Neil DeGrasse Tyson</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/humanUniverse.jpg" alt="">
+                <h2>Human Universe</h2>
+                <h5>Author: Brian Cox</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+        </div>
+
+        <!-- END tab panes -->
+        <br clear="all">
+    <div class="border-top"></div>
+        <!-- navigator -->
+        <h2 class="related-title">Related Books:</h2>
+        <div id="prod_nav">
+            <ul>
+                <li><a href="#1"><img src="images/sapiensResized.jpg" alt=""><strong>Sapiens</strong></a></li>
+                <li><a href="#3"><img src="images/theSixthExtinctionResized.jpg" alt=""><strong>The Sixth Extinction</strong></a></li>
+                <li><a href="#4"><img src="images/theVitalQuestionResize.jpg" alt=""><strong>The Vital Question</strong></a></li>
+                <li><a href="#2"><img src="images/astrophysicsResize.jpg" alt=""><strong>Astrophysics for ...</strong></a></li>
+                <li><a href="#5"><img src="images/humanUniverseResized.jpg" alt=""><strong>Human Universe</strong></a></li>
+            </ul>
+        </div>
+        <!-- close navigator -->
+        <br clear="both">
+    <!--</div>-->
+</div>
+<!-- END container -->
+<div class="footer">
+    <!-- First Column -->
+    <div class="one-fourth center">
+        <h3>Site Map</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+    <!-- Second Column -->
+    <div class="one-half center">
+        <h3>Information</h3>
+        <p>Dog Eared Books is a small company located in the heart of Ottawa, Ontario. We believe
+            anyone who doesnt like reading just hasn't found the right book. Please contact us at (613) 555-5555
+            for any questions or concerns.</p>
+        <p>Happy Reading!</p>
+
+    </div>
+    <!-- Third Column -->
+    <div class="one-fourth last center">
+        <h3>Social Media</h3>
+        <a href="#"><img src="images/icon_fb.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_twitter.png" alt=""></a>
+        <a href="#"><img src="images/icon_in.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_ig.png" alt=""></a>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- END footer -->
+</body>
+</html>

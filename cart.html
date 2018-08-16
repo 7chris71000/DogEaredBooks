@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Cart</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="images/Dog.ico">
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-4.1.1/bootstrap-4.1.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="fontawesome-free-5.1.0-web/css/all.css">
+    <!-- JS Files -->
+    <script src="JS/jquery.min.js"></script>
+    
+
+    
+</head>
+<body>
+<div class="header">
+    <!-- Logo/Title -->
+    <div class="site_title">
+        <a href="index.html" title="Home"><i class="fas fa-home logo-icons"></i></a>
+        <a href="category.html" title="Categories"><i class="fas fa-sitemap logo-icons"></i></a>
+        <a href="index.html" class="logo-center">
+            Dog Eared Books
+        </a>
+
+        <a href="search.html" title="Search"><i class="fas fa-search logo-icons"></i></a>
+        <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart logo-icons"></i></a>
+    </div>
+</div>
+<!-- END header -->
+<div id="container">
+    <h1 id="emptyCart" class="center">Your cart is empty.</h1>
+    <br clear="both">
+
+    <div class="rowCart border-bottom-cart">
+        <div class="col">
+            <b>Image</b>
+        </div>
+        <div class="col-3 border-left-cart">
+            <b>Title of book</b>
+        </div>
+        <div class="col border-left-cart">
+            <b>Price</b>
+        </div>
+        <div class="col-3 border-left-cart">
+            <b>Quantity</b>
+        </div>
+        <div class="col border-left-cart">
+            <b>Subtotal</b>
+        </div>
+        <div class="col-1 border-left-cart">
+            <b>Remove</b>
+        </div>
+    </div>
+    <div class="rowCart">
+        <div class="col line-height">
+            <a href="product.html">
+                <img class="img-size" src="images/sapiensResized.jpg">
+            </a>
+        </div>
+        <div class="col-3 data-title">
+            <p id="bookTitle"><a href="product.html">Sapiens</a></p>
+        </div>
+        <div class="col data">
+            <p id="bookPrice">$19.99</p>
+        </div>
+        <div class="col-3 data">
+            <button id="quantityMin" class="quantity-button">-</button>
+            <span id="quantityNum" class="margin-ten-ends">1</span>
+            <button id="quantityPlus" class="quantity-button">+</button>
+        </div>
+        <div class="col data">
+            <p id="subtotalPrice">$19.99</p>
+        </div>
+        <div class="col-1 data">
+            <i id="remove" class="fas fa-times-circle removeProd"></i>
+        </div>
+    </div>
+
+    <div class="rowCartTotal" id="taxRow">
+        <div class="col-9 line-height">
+            <p class="right">  </p>
+        </div>
+        <div class="col line-height">
+            <p class="right">Tax: </p>
+        </div>
+        <div class="col">
+            <p id="tax" class="tot-money add-cart-btn">$2.60</p>
+        </div>
+    </div>
+    <div class="rowCartTotal" id="totalRow">
+        <div class="col-9 line-height">
+            <p class="right">  </p>
+        </div>
+        <div class="col">
+            <p class="right">Total: </p>
+        </div>
+        <div class="col">
+            <p id="total" class="tot-money">$22.59</p>
+        </div>
+    </div>
+
+    <!--<div class="row">-->
+    <button id="checkoutBut" class="btn btn-dark"><a href="checkout.html" class="white">Proceed to Checkout</a></button>
+    <!--</div>-->
+</div>
+<!-- close container -->
+<div class="footer">
+    <!-- First Column -->
+    <div class="one-fourth center">
+        <h3>Site Map</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+    <!-- Second Column -->
+    <div class="one-half center">
+        <h3>Information</h3>
+        <p>Dog Eared Books is a small company located in the heart of Ottawa, Ontario. We believe
+            anyone who doesnt like reading just hasn't found the right book. Please contact us at (613) 555-5555
+            for any questions or concerns.</p>
+        <p>Happy Reading!</p>
+
+    </div>
+    <!-- Third Column -->
+    <div class="one-fourth last center">
+        <h3>Social Media</h3>
+        <a href="#"><img src="images/icon_fb.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_twitter.png" alt=""></a>
+        <a href="#"><img src="images/icon_in.png" alt=""></a>
+        <a href="#"><img class="small-img" src="images/icon_ig.png" alt=""></a>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- END footer -->
+<script>
+    $( "#quantityPlus" ).click(function () {
+        var quantity = $("#quantityNum").text();
+        var quantityInt = parseInt(quantity);
+
+        if((quantityInt == 1)){
+            $("#quantityMin").css('opacity','1');
+            $("#quantityMin").prop('disabled',false);
+        }
+
+        var price = $("#subtotalPrice").text();
+        var split = price.split("");
+        var splice = split.splice(0,1);
+        split = split.join("");
+        //console.log(split);
+        var subtotal = parseFloat(split);
+        var newSubtotal = subtotal + 19.99;
+        newSubtotal = newSubtotal.toFixed(2);
+        $("#subtotalPrice").text("$" + newSubtotal);
+        var taxes = newSubtotal*0.13;
+        var totWTaxes = newSubtotal*1.13;
+        $("#tax").text("$" + taxes.toFixed(2));
+        $("#total").text("$" + totWTaxes.toFixed(2));
+
+        $("#quantityNum").text(quantityInt + 1);
+    });
+    $( "#quantityMin" ).click(function () {
+        var quantity = $("#quantityNum").text();
+        var quantityInt = parseInt(quantity);
+        if((quantityInt - 2) == 0){
+            $("#quantityMin").css('opacity','.3');
+        }
+        if((quantityInt - 1) == 0){
+            $("#quantityMin").disable();
+
+        }
+
+        var price = $("#subtotalPrice").text();
+        var split = price.split("");
+        var splice = split.splice(0,1);
+        split = split.join("");
+        //console.log(split);
+        var subtotal = parseFloat(split);
+        var newSubtotal = subtotal - 19.99;
+        newSubtotal = newSubtotal.toFixed(2);
+        $("#subtotalPrice").text("$" + newSubtotal);
+        var taxes = newSubtotal*0.13;
+        var totWTaxes = newSubtotal*1.13;
+        $("#tax").text("$" + taxes.toFixed(2));
+        $("#total").text("$" + totWTaxes.toFixed(2));
+
+
+
+        $("#quantityNum").text(quantityInt - 1);
+    });
+    $( "#remove" ).click(function () {
+        $("#checkoutBut").remove();
+        $(".rowCart").remove();
+        $("#totalRow").remove();
+        $("#checkoutBut").remove();
+        $("#taxRow").remove();
+        $("#emptyCart").show();
+        }
+    )
+</script>
+<script>
+    $( document ).ready(function() {
+        $("#emptyCart").hide();
+        $("#quantityMin").css('opacity','.3').disable();
+    });
+</script>
+</body>
+</html>
