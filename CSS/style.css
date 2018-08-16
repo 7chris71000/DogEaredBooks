@@ -334,6 +334,14 @@ div#container > div.filler2.filler2-margin{
     margin-right: 10px;
 }
 
+.filler h2{
+    font-family: "QuicksandBook", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
 .one {
     width: 960px;
 }
