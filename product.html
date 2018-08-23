@@ -6,6 +6,11 @@
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-4.1.1/bootstrap-4.1.1/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/buttons.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/product_info.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/typography.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/headerFooter.css">
+
     <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" media="screen" href="fontawesome-free-5.1.0-web/css/all.css">
 
@@ -13,7 +18,7 @@
     <script src="bootstrap-4.1.1/bootstrap-4.1.1/js/jquery.tools.min.js"></script>
     <script>
         $(function () {
-            $("#prod_nav ul").tabs("#panes > div", {
+            $(".prod_nav ul").tabs(".panes > div", {
                 effect: 'fade',
                 fadeOutSpeed: 400
             });
@@ -43,10 +48,10 @@
     </div>
 </div>
 <!-- END header -->
-<div id="container">
+<div class="container">
     <!-- tab panes -->
     <!--<div id="prod_wrapper">-->
-        <div id="panes">
+        <div class="panes">
             <div><img src="images/sapiens.jpg" alt="">
                 <h2>Sapiens</h2>
                 <h5>Author: Yuval Noah Harari</h5>
@@ -114,7 +119,7 @@
     <div class="border-top"></div>
         <!-- navigator -->
         <h2 class="related-title">Related Books:</h2>
-        <div id="prod_nav">
+        <div class="prod_nav">
             <ul>
                 <li><a href="#1"><img src="images/sapiensResized.jpg" alt=""><strong>Sapiens</strong></a></li>
                 <li><a href="#3"><img src="images/theSixthExtinctionResized.jpg" alt=""><strong>The Sixth Extinction</strong></a></li>
@@ -130,7 +135,7 @@
 <!-- END container -->
 <div class="footer">
     <!-- First Column -->
-    <div class="one-fourth center">
+    <div class="one-fourth text-center">
         <h3>Site Map</h3>
         <ul class="footer-links">
             <li><a href="index.html">Homepage</a></li>
@@ -140,7 +145,7 @@
         </ul>
     </div>
     <!-- Second Column -->
-    <div class="one-half center">
+    <div class="one-half text-center">
         <h3>Information</h3>
         <p>Dog Eared Books is a small company located in the heart of Ottawa, Ontario. We believe
             anyone who doesnt like reading just hasn't found the right book. Please contact us at (613) 555-5555
@@ -149,7 +154,7 @@
 
     </div>
     <!-- Third Column -->
-    <div class="one-fourth last center">
+    <div class="one-fourth last text-center">
         <h3>Social Media</h3>
         <a href="#"><img src="images/icon_fb.png" alt=""></a>
         <a href="#"><img class="small-img" src="images/icon_twitter.png" alt=""></a>
